@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Tic Tac Toe Home</title>
+  </head>
+  <body>
+    <nav>
+      <h3>Tic Tac Toe</h3>
+      <h3>{{name}}</h3>
+      <form method="post">
+        <button class="logout" value="logout" name="logout">Logout</button>
+      </form>
+    </nav>
+    <div class="wrapper">
+      <div class="container">
+        <div class="create">
+          <h2 class="menuTitle">Create</h2>
+          <div class="card">
+            <h3 class="gameMode">Classic 3x3</h3>
+            <form method="post">
+              <button class="cardAction" value="1" name="create">Create</button>
+            </form>
+          </div>
+        </div>
+        <div class="join">
+          <h2 class="menuTitle">Join</h2>
+          {% for game in games: %}
+          <div class="card">
+            <h3 class="gameMode">Classic 3x3</h3>
+            <form method="post">
+              <button class="cardAction" value="{{game.id}}" name="join">
+                Join
+              </button>
+              {% if userId == game.owner: %}
+              <button class="cardDelete" value="{{game.id}}" name="delete">
+                X
+              </button>
+              {% endif %}
+            </form>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

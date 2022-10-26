@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Lobby</title>
+  </head>
+  <body>
+    <nav>
+      <h3>Tic Tac Toe</h3>
+      <h3>{{name}}</h3>
+      <form method="post">
+        <button class="logout" value="logout" name="logout">Logout</button>
+      </form>
+    </nav>
+    <div class="wrapper">
+      <div class="container">
+        <div class="plane">
+          {% if(winner == None): %}
+          <form action="" method="post">
+            {% if players|length == 2: %}
+              {% for i in range(board|length): %}
+                  {% if(board[i] == players[0].id): %}
+                  <button class="p1">X</button>
+                  {% endif %} 
+                  {% if (board[i] == players[1].id): %}
+                  <button class="p2">O</button>
+                  {% endif %}
+                  {% if (board[i] == -1): %}
+                  <button name="tile" value="{{i}}"></button>
+                  {% endif %}
+              {% endfor %}
+              {% endif %}
+          </form>
+          {% endif %}
+          {% if(not winner == None): %}
+            <h1>Game Over!</h1>
+          {% endif %}
+        </div>
+        <div class="scoreBoard">
+          {% for player in players: %}
+            <h2>{{player.username}}</h2>
+          {% endfor %}
+        </div>
+        <form action="" method="post">
+          <button class="leave" name="leave" value="1">Leave</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

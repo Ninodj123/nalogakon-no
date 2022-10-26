@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary: rgb(48, 48, 48);
+  --primaryLight: rgba(48, 48, 48, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Rubik", sans-serif;
+  color: var(--primary);
+}
+
+body {
+  background-color: rgb(234, 234, 234);
+}
+
+.wrapper {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  padding: 40px;
+}
+
+.form-container {
+  background-color: #fff;
+  width: 500px;
+  height: 600px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.211);
+}
+
+.form-container form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-container input {
+  margin: 10px 0;
+  width: 80%;
+  height: 40px;
+  border-radius: 15px;
+  background-color: rgb(233, 233, 233);
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  transition: 150ms;
+}
+
+.form-container input:focus {
+  outline: none;
+  background-color: var(--primaryLight);
+  color: #fff;
+}
+
+.form-container input:focus::placeholder {
+  color: #fff;
+}
+
+.submit,
+.logout {
+  width: 200px;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 15px;
+  background-color: var(--primary);
+  color: #fff;
+  transition: 150ms;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit:hover,
+.logout:hover {
+  background-color: var(--primaryLight);
+}
+
+.logout {
+  text-decoration: none;
+  width: 100px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.err {
+  color: red;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+.join,
+.create {
+  margin-top: 100px;
+  width: 40%;
+  height: 500px;
+  border-radius: 15px;
+  border: 2px dashed var(--primary);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.join {
+  overflow-y: auto;
+}
+
+.menuTitle {
+  padding: 20px;
+}
+
+.card {
+  width: 90%;
+  min-height: 100px;
+  border-radius: 30px;
+  border: 1px dashed var(--primary);
+  transition: 150ms;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card .gameMode {
+  padding-left: 20px;
+}
+
+.card form {
+  width: 120px;
+  height: 40px;
+  margin-right: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card .cardAction,
+.cardDelete {
+  border-radius: 10px;
+  height: 40px;
+  width: 55px;
+  border: 1px dashed var(--primary);
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.card:hover {
+  background-color: var(--primary);
+}
+
+.card:hover .gameMode {
+  color: #fff;
+}
+
+.card:hover .cardAction,
+.card:hover .cardDelete {
+  color: #fff;
+  border: 1px dashed #fff;
+}
+
+.plane form {
+  max-width: 800px;
+  max-height: 800px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.158);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.scoreBoard {
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.158);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+.plane form button {
+  cursor: pointer;
+  aspect-ratio: 1;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(221, 40, 40, 0.027);
+  border: 2px dashed rgb(55, 55, 66);
+  border-radius: 15px;
+  transition: 250ms;
+}
+
+.plane form button:hover {
+  background-color: rgb(55, 55, 66);
+}
+
+.player {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  margin: 20px 0;
+}
+
+.player p {
+  margin-left: 20px;
+}
+
+.p1 {
+  background-color: rgb(55, 55, 66);
+
+  content: "X";
+  font-size: 40px;
+  text-align: center;
+  color: rgb(255, 92, 64);
+}
+
+.p2 {
+  content: "X";
+  font-size: 40px;
+  text-align: center;
+  color: rgb(76, 112, 204);
+}
